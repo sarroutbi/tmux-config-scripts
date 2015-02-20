@@ -1,0 +1,2 @@
+#!/bin/bash
+snd_ml_auth.exp s $1
