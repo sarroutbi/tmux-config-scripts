@@ -1,0 +1,38 @@
+## set the default shell
+shell bash
+
+# screens
+screen -t 'Window1'
+screen -t 'Window2'
+screen -t 'Window3'
+screen -t 'Window4'
+screen -t 'Window5'
+screen -t 'Window6'
+screen -t 'Window7'
+screen -t 'Window8'
+screen -t 'Window9'
+
+# Other confs
+activity ""
+altscreen on
+autodetach on
+defbce on
+deflogin on
+defflow off
+defscrollback 2048
+defutf8 on
+msgwait 1
+nethack on
+nonblock on
+startup_message off
+vbell off
+vbell_msg ""
+
+bell_msg "!!! Ding !!!"
+
+term screen-256color
+terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
+caption always '%{= kG}%-w%{= R}%50>(%n-%t)%{= kG}%+w%<'
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{M}%H %{G}][%{B} %d/%m %{W}%c %{G}][ %{C}%l %{G}]%{G}[%{R} %n:%t %{G}]'
