@@ -29,7 +29,7 @@ function get_list_date()
 # 1: Invalid Date 
 function is_valid_date()
 {
-  echo $1 | egrep -E "[0-9]{2}/[0-9]{2}/[0-9]{4}" > /dev/null
+  echo $1 | egrep -E "[0-9]{1,2}/[0-9]{2}/[0-9]{4}" > /dev/null
   echo $?
 }
 
