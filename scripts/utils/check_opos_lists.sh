@@ -93,7 +93,6 @@ do
   if [ "${NOW_DATE}" != "${LAST_DATE}" ] && [ ${NOW_INVALID_DATE} -eq 0 ] && [ ${LAST_INVALID_DATE} -eq 0 ];
   then
     retrieve_files
-    retrieve_pri_files
     /usr/local/src/sendEmail/sendEmail -f from@mail.com -t to@mail.com -u "Actualizacion de listas de interinos de secundaria" -u "Actualizacion de listas de interinos de secundaria" -m "Se ha detectado una actualizacion en la lista de interinos de secundaria. Fecha antigua:${LAST_DATE}, Fecha nueva:${NOW_DATE}.\nConsulte el enlace:\n${LINK}" -v -xu user -xp password -a "${TMP_LAST_INTERIM_CALLED}" -a "${TMP_NEXT_INTERIM_CALLED}" -a "${TMP_LAST_VOLUNTEER_CALLED}" -a "${TMP_NEXT_VOLUNTEER_CALLED}" -a "${TMP_INC_CALLED}"
     LAST_DATE=${NOW_DATE}
   fi
