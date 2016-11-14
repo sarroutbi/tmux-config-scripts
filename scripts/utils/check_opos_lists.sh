@@ -99,7 +99,7 @@ do
   if [ "${NOW_PRI_DATE}" != "${LAST_PRI_DATE}" ] && [ ${NOW_PRI_INVALID_DATE} -eq 0 ] && [ ${LAST_PRI_INVALID_DATE} -eq 0 ];
   then
     retrieve_pri_files
-    /usr/local/src/sendEmail/sendEmail -f from@mail.com -t to@mail.com -u "Actualizacion de listas de interinos de primaria" -u "Actualizacion de listas de interinos de primaria" -m "Se ha detectado una actualizacion en la lista de interinos de primaria. Fecha antigua:${LAST_PRI_DATE}, Fecha nueva:${NOW_PRI_DATE}.\nConsulte el enlace:\n${PRI_LINK}" -v -xu user -xp password -a "${TMP_PRI_LAST_INTERIM_CALLED}" -a "${TMP_PRI_NEXT_INTERIM_CALLED}" -a "${TMP_PRI_LAST_VOLUNTEER_CALLED}" -a "${TMP_PRI_NEXT_VOLUNTEER_CALLED}" -a "${TMP_PRI_INC_CALLED}"
+    /usr/local/src/sendEmail/sendEmail -f from@mail.com -t to@mail.com -u "Actualizacion de listas de interinos de primaria" -u "Actualizacion de listas de interinos de primaria" -m "Se ha detectado una actualizacion en la lista de interinos de primaria. Fecha antigua:${LAST_PRI_DATE}, Fecha nueva:${NOW_PRI_DATE}.\nConsulte el enlace:\n${PRIMARY_LINK}" -v -xu user -xp password -a "${TMP_PRI_LAST_INTERIM_CALLED}" -a "${TMP_PRI_NEXT_INTERIM_CALLED}" -a "${TMP_PRI_LAST_VOLUNTEER_CALLED}" -a "${TMP_PRI_NEXT_VOLUNTEER_CALLED}" -a "${TMP_PRI_INC_CALLED}"
     LAST_PRI_DATE=${NOW_PRI_DATE}
   fi
   sleep ${CHECK_LOOP}
