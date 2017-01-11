@@ -52,7 +52,7 @@ function retrieve_files()
   get_file "${LINK}" "${GLOBAL_LINK}" "Últimos interinos citados" ${TMP_LAST_INTERIM_CALLED}
   get_file "${LINK}" "${GLOBAL_LINK}" "Próximos interinos" ${TMP_NEXT_INTERIM_CALLED}
   get_file "${LINK}" "${GLOBAL_LINK}" "últimos interinos citados para puestos de carácter voluntario" ${TMP_LAST_VOLUNTEER_CALLED}
-  get_file "${LINK}" "${GLOBAL_LINK}" "Interinos citados para puestos de carácter voluntario" ${TMP_NEXT_VOLUNTEER_CALLED}
+  get_file "${LINK}" "${GLOBAL_LINK}" "interinos citados para puestos de carácter voluntario" ${TMP_NEXT_VOLUNTEER_CALLED}
   get_file "${LINK}" "${GLOBAL_LINK}" "Incorporados a las listas en su orden" "${TMP_INC_CALLED}"
 }
 
@@ -62,7 +62,7 @@ function retrieve_pri_files()
   get_file "${PRIMARY_LINK}" "${GLOBAL_LINK}" "Últimos interinos citados" ${TMP_PRI_LAST_INTERIM_CALLED}
   get_file "${PRIMARY_LINK}" "${GLOBAL_LINK}" "Próximos interinos" ${TMP_PRI_NEXT_INTERIM_CALLED}
   get_file "${PRIMARY_LINK}" "${GLOBAL_LINK}" "últimos interinos citados para puestos de carácter voluntario" ${TMP_PRI_LAST_VOLUNTEER_CALLED}
-  get_file "${PRIMARY_LINK}" "${GLOBAL_LINK}" "Interinos citados para puestos de carácter voluntario" ${TMP_PRI_NEXT_VOLUNTEER_CALLED}
+  get_file "${PRIMARY_LINK}" "${GLOBAL_LINK}" "interinos citados para puestos de carácter voluntario" ${TMP_PRI_NEXT_VOLUNTEER_CALLED}
   get_file "${PRIMARY_LINK}" "${GLOBAL_LINK}" "Incorporados a las listas en su orden" ${TMP_PRI_INC_CALLED}
 }
 
