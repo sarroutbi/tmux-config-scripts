@@ -29,12 +29,12 @@ function get_file()
 
 function get_list_date()
 {
-  wget ${LINK} -o/dev/null -O - | grep "interinos\|voluntarios" | grep -E '\([0-9]{0,2}/[0-9]{0,2}/[0-9]{1,4}\)' -o | sort | uniq
+  wget ${LINK} -o/dev/null -O - | grep "interinos\|voluntarios" | grep -E '\([0-9]{0,2}/[0-9]{0,2}/[0-9]{1,4}\)' -o | sort | uniq | tail -1
 }
 
 function get_pri_list_date()
 {
-  wget ${PRIMARY_LINK} -o/dev/null -O - | grep "interinos\|voluntarios" | grep -E '\([0-9]{0,2}/[0-9]{0,2}/[0-9]{1,4}\)' -o | sort | uniq
+  wget ${PRIMARY_LINK} -o/dev/null -O - | grep "interinos\|voluntarios" | grep -E '\([0-9]{0,2}/[0-9]{0,2}/[0-9]{1,4}\)' -o | sort | uniq | tail -1
 }
 
 # Returns:
