@@ -58,11 +58,10 @@ function retrieve_files()
 function retrieve_pri_files()
 {
   echo "Retrieving files ..."
-  get_file "${PRIMARY_LINK}" "${GLOBAL_LINK}" "Últimos interinos citados" ${TMP_PRI_LAST_INTERIM_CALLED}
+  get_file "${PRIMARY_LINK}" "${GLOBAL_LINK}" "Citaciones para cubrir puestos ordinarios" ${TMP_PRI_LAST_INTERIM_CALLED}
   get_file "${PRIMARY_LINK}" "${GLOBAL_LINK}" "Próximos interinos" ${TMP_PRI_NEXT_INTERIM_CALLED}
-  get_file "${PRIMARY_LINK}" "${GLOBAL_LINK}" "Interinos citados para puestos de carácter voluntario" ${TMP_PRI_LAST_VOLUNTEER_CALLED}
-  get_file "${PRIMARY_LINK}" "${GLOBAL_LINK}" "últimos interinos citados para puestos de carácter voluntario" ${TMP_PRI_NEXT_VOLUNTEER_CALLED}
-  get_file "${PRIMARY_LINK}" "${GLOBAL_LINK}" "Incorporados a las listas en su orden" ${TMP_PRI_INC_CALLED}
+  get_file "${PRIMARY_LINK}" "${GLOBAL_LINK}" "Citaciones para cubrir puestos de carácter voluntario" ${TMP_PRI_LAST_VOLUNTEER_CALLED}
+  get_file "${PRIMARY_LINK}" "${GLOBAL_LINK}" "interinos citados para puestos de carácter voluntario" ${TMP_PRI_NEXT_VOLUNTEER_CALLED}
 }
 
 LAST_DATE=$(get_list_date)
