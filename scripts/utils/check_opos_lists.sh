@@ -52,7 +52,7 @@ function retrieve_files()
   get_file "${LINK}" "${GLOBAL_LINK}" "Citaciones para cubrir puestos ordinarios" ${TMP_LAST_INTERIM_CALLED}
   get_file "${LINK}" "${GLOBAL_LINK}" "Próximos interinos" ${TMP_NEXT_INTERIM_CALLED}
   get_file "${LINK}" "${GLOBAL_LINK}" "Citaciones para cubrir puestos de carácter voluntario" ${TMP_LAST_VOLUNTEER_CALLED}
-  get_file "${LINK}" "${GLOBAL_LINK}" "últimos interinos citados para puestos de carácter voluntario" ${TMP_NEXT_VOLUNTEER_CALLED}
+  get_file "${LINK}" "${GLOBAL_LINK}" "interinos citados para puestos de carácter voluntario" ${TMP_NEXT_VOLUNTEER_CALLED}
 }
 
 function retrieve_pri_files()
