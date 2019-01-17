@@ -51,8 +51,8 @@ function retrieve_files()
   echo "Retrieving files ..."
   get_file "${LINK}" "${GLOBAL_LINK}" "Citaciones para cubrir puestos ordinarios" ${TMP_LAST_INTERIM_CALLED}
   get_file "${LINK}" "${GLOBAL_LINK}" "Próximos interinos" ${TMP_NEXT_INTERIM_CALLED}
-  get_file "${LINK}" "${GLOBAL_LINK}" "Citaciones para cubrir puestos de carácter voluntario" ${TMP_LAST_VOLUNTEER_CALLED}
-  get_file "${LINK}" "${GLOBAL_LINK}" "interinos citados para puestos de carácter voluntario" ${TMP_NEXT_VOLUNTEER_CALLED}
+  get_file "${LINK}" "${GLOBAL_LINK}" "Citaciones para puestos voluntarios" ${TMP_LAST_VOLUNTEER_CALLED}
+  get_file "${LINK}" "${GLOBAL_LINK}" "interinos que fueron citados para cubrir puestos voluntarios" ${TMP_NEXT_VOLUNTEER_CALLED}
 }
 
 function retrieve_pri_files()
@@ -60,8 +60,8 @@ function retrieve_pri_files()
   echo "Retrieving files ..."
   get_file "${PRIMARY_LINK}" "${GLOBAL_LINK}" "Citaciones para cubrir puestos ordinarios" ${TMP_PRI_LAST_INTERIM_CALLED}
   get_file "${PRIMARY_LINK}" "${GLOBAL_LINK}" "Próximos interinos" ${TMP_PRI_NEXT_INTERIM_CALLED}
-  get_file "${PRIMARY_LINK}" "${GLOBAL_LINK}" "Citaciones para cubrir puestos de carácter voluntario" ${TMP_PRI_LAST_VOLUNTEER_CALLED}
-  get_file "${PRIMARY_LINK}" "${GLOBAL_LINK}" "interinos citados para puestos de carácter voluntario" ${TMP_PRI_NEXT_VOLUNTEER_CALLED}
+  get_file "${PRIMARY_LINK}" "${GLOBAL_LINK}" "Citaciones para puestos voluntarios" ${TMP_PRI_LAST_VOLUNTEER_CALLED}
+  get_file "${PRIMARY_LINK}" "${GLOBAL_LINK}" "interinos que fueron citados para cubir puestos voluntarios" ${TMP_PRI_NEXT_VOLUNTEER_CALLED}
 }
 
 LAST_DATE=$(get_list_date)
