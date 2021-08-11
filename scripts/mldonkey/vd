@@ -1,2 +1,3 @@
 #!/bin/bash
 snd_ml_auth.exp vd
+transmission-remote -l -n user:password
