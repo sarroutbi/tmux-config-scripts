@@ -19,6 +19,8 @@ ${0} [-c: change user] [-d: number of doors, 3 by default] [-i: number of iterat
 """
 import argparse
 import random
+import os
+import sys
 from enum import Enum
 
 DEFAULT_DOORS_AMOUNT=3
@@ -110,7 +112,7 @@ def change_user_selection(doors):
         return True
 
 def parse_args():
-  parser = argparse.ArgumentParser('%(prog) file to test Monty Hall paradigm')
+  parser = argparse.ArgumentParser(os.path.basename(sys.argv[0]) + ' program tests Monty Hall paradigm')
   parser.add_argument('-d', help='number of doors', type=int, default=DEFAULT_DOORS_AMOUNT)
   parser.add_argument('-i', help='number of iterations (times to play)', type=int, default=DEFAULT_ITERATIONS)
   parser.add_argument('-c', help='specify just in case that user changes the door', type=int, default=DEFAULT_CHANGE)
@@ -137,7 +139,7 @@ def iterations(args):
     # Calculate and store result
     calculate_results(args, doors, result)
     # end iterations
-  print result
+  print(result)
     
 def main():
     iterations(parse_args())
