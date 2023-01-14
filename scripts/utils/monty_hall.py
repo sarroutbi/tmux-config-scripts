@@ -15,7 +15,7 @@
 """
 Program to test Monty Hall paradigm
 Usage:
-${0} [-c: change door] [-d: number of doors, 3 by default] [-i: iterations, 10000 by default]
+${0} [-c: user changes door] [-d: number of doors, 3 by default] [-i: iterations, 10000 by default]
 """
 import argparse
 import random
@@ -24,15 +24,15 @@ import sys
 from enum import Enum
 
 DEFAULT_DOORS_AMOUNT=3
-DEFAULT_CHANGE=0
+DEFAULT_CHANGE=False
 DEFAULT_ITERATIONS=10000
 
 def str2bool(value):
     return value.lower() in ("yes", "true", "t", "1")
 
 class DoorContent(Enum):
-    GOAT  = 1
-    CAR   = 2
+    GOAT = 1
+    CAR  = 2
     NONE = 3
 
 class Result:
@@ -134,13 +134,13 @@ def parse_args():
                         type=int, default=DEFAULT_DOORS_AMOUNT)
     parser.add_argument('-i', help='number of iterations (times to play)',
                         type=int, default=DEFAULT_ITERATIONS)
-    parser.add_argument('-c', help='specify just in case that user changes the door',
-                        type=int, default=DEFAULT_CHANGE)
+    parser.add_argument('-c', help='set for user to change door after open goat one',
+                        action='store_true', default=DEFAULT_CHANGE)
     return parser.parse_args()
 
 def calculate_results(args, doors, results):
     open_goat_door(doors)
-    if args.c == 1:
+    if args.c:
         change_user_selection(doors)
     if user_wins(doors):
         results.add_win()
