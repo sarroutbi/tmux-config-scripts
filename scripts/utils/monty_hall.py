@@ -27,10 +27,10 @@ DEFAULT_DOORS_AMOUNT=3
 DEFAULT_CHANGE=False
 DEFAULT_ITERATIONS=10000
 
-def str2bool(value):
-    return value.lower() in ("yes", "true", "t", "1")
-
 class DoorContent(Enum):
+    """
+    Different types of door content
+    """
     GOAT = 1
     CAR  = 2
     NONE = 3
@@ -52,8 +52,14 @@ class Result:
                    "Looses:" + str(self.loose) + "\n" +
                    "-----------------------------")
     def add_win(self):
+        """
+        Add win to the current results
+        """
         self.win += 1
     def add_loose(self):
+        """
+        Add loose to the current results
+        """
         self.loose += 1
 
 class Door:
@@ -70,25 +76,43 @@ class Door:
         self.selected = False
         self.opened = False
     def is_winning_door(self):
+        """
+        Function to check if the door is a winning door
+        """
         return self.selected and DoorContent.CAR == self.content
     def open(self):
+        """
+        Function to set a door as opened
+        """
         self.opened = True
     def __str__(self):
+        """
+        Function to print door as string
+        """
         return '[%s%s%s]' % ("G" if self.content == DoorContent.GOAT
                              else "C", "o" if self.opened else "c",
                              "s" if self.selected else "n")
 def print_doors(doors):
+    """
+    Print doors in its current state
+    """
     for door in doors:
         print(door, end="")
     print()
 
 def user_wins(doors):
+    """
+    Check if user wins (selected door has the car)
+    """
     for door in doors:
         if door.is_winning_door():
             return True
     return False
 
 def create_doors(args):
+    """
+    Create the doors with its content (one car, rest goats)
+    """
     doors = []
     car_position = random.randint(0, args.d-1)
     for udoor in range(0, args.d):
@@ -100,6 +124,9 @@ def create_doors(args):
     return doors
 
 def open_goat_door(doors):
+    """
+    Function that opens a door containing a goat from door array
+    """
     for door in doors:
         if door.content is DoorContent.GOAT and door.selected is False \
            and door.opened is False:
@@ -108,10 +135,16 @@ def open_goat_door(doors):
     return doors
 
 def user_selects_door(doors):
+    """
+    Function that selects a door for the user randomly
+    """
     user_selection = random.randint(0, len(doors)-1)
     doors[user_selection].selected = True
 
 def change_user_selection(doors):
+    """
+    Function that changes user's selected door
+    """
     user_made_selection = False
     for door_number in range(0, len(doors)):
         if doors[door_number].selected:
@@ -128,6 +161,9 @@ def change_user_selection(doors):
             return
 
 def parse_args():
+    """
+    Function that parses incoming arguments
+    """
     parser = argparse.ArgumentParser(os.path.basename(sys.argv[0]) + \
                                      ' program tests Monty Hall paradigm')
     parser.add_argument('-d', help='number of doors',
@@ -139,6 +175,9 @@ def parse_args():
     return parser.parse_args()
 
 def calculate_results(args, doors, results):
+    """
+    Main function to calculate results of the game
+    """
     open_goat_door(doors)
     if args.c:
         change_user_selection(doors)
@@ -148,6 +187,9 @@ def calculate_results(args, doors, results):
         results.add_loose()
 
 def iterations(args):
+    """
+    Function that plays a number of times
+    """
     result = Result()
 
     # For each iteration (number of iteration is a parameter)
@@ -162,6 +204,9 @@ def iterations(args):
     print(result)
 
 def main():
+    """
+    Main function
+    """
     iterations(parse_args())
 
 if __name__ == "__main__":
