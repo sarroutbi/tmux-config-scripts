@@ -146,15 +146,15 @@ def change_user_selection(doors):
     Function that changes user's selected door
     """
     user_made_selection = False
-    for door_number in range(0, len(doors)):
-        if doors[door_number].selected:
+    for door_number, door in enumerate(doors):
+        if door.selected:
             previous_selected = door_number
     while not user_made_selection:
         selection = random.randint(0, len(doors)-1)
-        for door_number in range(0, len(doors)):
-            if door_number == selection and not doors[door_number].opened \
-               and not doors[door_number].selected:
-                doors[door_number].selected = True
+        for door_number, door in enumerate(doors):
+            if door_number == selection and not door.opened \
+               and not door.selected:
+                door.selected = True
                 user_made_selection = True
                 doors[previous_selected].selected = False
         if user_made_selection:
