@@ -89,9 +89,9 @@ class Door:
         """
         Function to print door as string
         """
-        return '[%s%s%s]' % ("G" if self.content == DoorContent.GOAT
-                             else "C", "o" if self.opened else "c",
-                             "s" if self.selected else "n")
+        return f'{"G" if self.content == DoorContent.GOAT else "C"}\
+        { "o" if self.opened else "c"}{"s" if self.selected else "n"}'
+
 def print_doors(doors):
     """
     Print doors in its current state
