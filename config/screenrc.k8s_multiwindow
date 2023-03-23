@@ -1,0 +1,47 @@
+## set the default shell
+shell  bash
+
+# screens
+screen -t multi00-pods bash -c 'watch -n1 -d oc -n nbde get deployment'
+screen -t multi01-deployment bash -c 'watch -n1 -d oc -n nbde get pods'
+screen -t multi02-service bash -c 'watch -n1 -d oc -n nbde get service'
+screen -t multi03-namespace bash -c 'watch -n1 -d oc get namespace nbde'
+
+# Split disposal 
+split -v
+select multi00-pods
+focus right
+select multi01-deployment
+split
+focus left
+split
+focus down
+select multi02-service
+focus right
+select multi03-namespace
+
+# Other confs
+activity ""
+altscreen on
+autodetach on
+defbce on
+deflogin on
+defflow off
+defscrollback 2048
+defutf8 on
+msgwait 1
+nethack on
+nonblock on
+startup_message off
+vbell off
+vbell_msg ""
+bell_msg "!!! Ding !!!"
+
+# scrollback
+scrollback 10000000
+
+term screen-256color
+caption always '%{= kG}%-w%{= R}%50>(%n-%t)%{= kG}%+w%<'
+
+hardstatus alwayslastline
+hardstatus string '%{= kG}[%{M}%H %{G}][%{B} %d/%m %{W}%c:%s %{G}][ %{C}%l %{G}]%{G}[%{R} %n:%t %{G}][%{W}%S%{G}]'

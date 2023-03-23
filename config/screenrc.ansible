@@ -1,0 +1,60 @@
+## set the default shell
+shell                   bash
+
+# screens
+screen -t controller00 
+screen -t controller01
+screen -t client00 
+screen -t  client01
+screen -t server00
+screen -t server01
+screen -t misc00
+screen -t misc01
+screen -t dockerd
+screen -t minikube
+
+# scrollback
+scrollback 10000000
+
+# Other confs
+activity ""
+altscreen on
+autodetach on
+defbce on
+deflogin on
+defflow off
+defscrollback 2048
+defutf8 on
+msgwait 1
+nethack on
+nonblock on
+startup_message off
+vbell off
+vbell_msg ""
+
+bell_msg "!!! Ding !!!"
+
+term screen-256color
+ORI: terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+#
+#caption always "%{= kb}[ %=%{w}%?%-Lw%?%{b}(%{W}%n*%f %t%?(%u)%?%{b})%{w}%?%+Lw%?%?%= %{b}][%{B} %H %{W}%l %{b}][%{B} %d.%m.%Y %{W}%0c %{b}]"
+#sorendition +b kG
+
+#defscrollback 5000
+#hardstatus alwayslastline
+#hardstatus string '%{= kG}%-Lw%{= kW}%50> %n*%f %t%{= kG}%+Lw%< %{= kG}%-=%D %m/%d/%y | %C:%s %A | %1`%{-}'
+
+#change the hardstatus settings to give an window list at the bottom of the                                                                        
+#screen, with the time and date and with the current window highlighted                                                                            
+#hardstatus alwayslastline
+#hardstatus string '%{= kG}%-Lw%{= kW}%50> %n%f* %t%{= kG}%+Lw%< %{= kG}%-=%c:%s%{-}'
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+
+#hardstatus alwayslastline
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%{B} %d/%m %{W}%c %{g}][%{R} %n:%t %{G}][[%-Lw%{= BW}%50>%n%f* %{-}%{G}]]'
+
+#caption always '%{= kG}%-w%{= R}%50>(%n-%t)%{= kG}%+w%<'
+caption always '%{= kG}%-w%{= R}%50>(%n-%t)%{= kG}%+w%<'
+
+hardstatus alwayslastline
+hardstatus string '%{= kG}[%{M}%H %{G}][%{B} %d/%m %{W}%c:%s %{G}][ %{C}%l %{G}]%{G}[%{R} %n:%t %{G}][%{W}%S%{G}]'

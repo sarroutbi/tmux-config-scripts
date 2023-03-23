@@ -1,0 +1,35 @@
+## set the default shell
+shell                   bash
+
+# screens
+screen -t compile
+screen -t emacs-edit00
+screen -t gummi
+screen -t misc
+
+# Other confs
+activity ""
+altscreen on
+autodetach on
+defbce on
+deflogin on
+defflow off
+defscrollback 2048
+defutf8 on
+msgwait 1
+nethack on
+nonblock on
+startup_message off
+vbell off
+vbell_msg ""
+
+# scrollback
+scrollback 10000000
+
+bell_msg "!!! Ding !!!"
+
+term screen-256color
+caption always '%{= kG}%-w%{= R}%50>(%n-%t)%{= kG}%+w%<'
+
+hardstatus alwayslastline
+hardstatus string '%{= kG}[%{M}%H %{G}][%{B} %d/%m %{W}%c:%s %{G}][ %{C}%l %{G}]%{G}[%{R} %n:%t %{G}][%{W}%S%{G}]'
