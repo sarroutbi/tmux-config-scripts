@@ -20,7 +20,7 @@ cd "${1}" 2>/dev/null || {
 	echo
 	exit 1
 }
-test -z ${2} 2>/dev/null && {
+test -z "${2}" 2>/dev/null && {
         echo
         echo "Must provide a session name as second parameter"
         echo
