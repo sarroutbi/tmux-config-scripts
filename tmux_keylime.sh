@@ -36,4 +36,4 @@ tmux new-window -t "${2}":4 -n '1mt01'
 tmux new-window -t "${2}":5 -n '1mt02'
 tmux new-window -t "${2}":6 -n 'misc'
 tmux new-window -t "${2}":7 -n 'DOC'
-tmux attach -t "${2}" 
+tmux attach -t "${2}"
