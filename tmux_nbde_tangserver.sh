@@ -36,7 +36,7 @@ tmux new-window -t "${2}":3 -n '1mt00'
 tmux new-window -t "${2}":4 -n '1mt01'
 tmux new-window -t "${2}":5 -n 'tests'
 tmux new-window -t "${2}":6 -n 'docker'
-tmux new-window -t "${2}":7 -n 'minikube'
+tmux new-window -t "${2}":7 -n 'minikube/crc'
 tmux new-window -t "${2}":8 -n 'DOC'
 tmux new-window -t "${2}":9 -n 'misc'
 tmux attach -t "${2}" 
