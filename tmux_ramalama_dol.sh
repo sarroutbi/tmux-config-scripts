@@ -29,7 +29,6 @@ test -z "${2}" 2>/dev/null && {
 }
 tmux new -s "${2}" -d
 tmux source-file ~/tmuxes/tmux.common.conf
-tmux rename-window 'console'
-tmux new-window -t "${2}":1 -n 'Presentation'
-tmux new-window -t "${2}":2 -n 'Demo'
+tmux rename-window 'Presentation'
+tmux new-window -t "${2}":1 -n 'Demo (script)'
 tmux attach -t "${2}"
