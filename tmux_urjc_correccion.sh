@@ -33,4 +33,5 @@ tmux rename-window 'console'
 tmux new-window -t "${2}":1 -n 'terminal'
 tmux new-window -t "${2}":2 -n 'server'
 tmux new-window -t "${2}":3 -n 'test'
+tmux new-window -t "${2}":4 -n 'my-server'
 tmux attach -t "${2}" 
