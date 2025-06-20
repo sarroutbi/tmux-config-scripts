@@ -35,6 +35,6 @@ tmux new-window -t "${2}":3 -n 'agent'
 tmux new-window -t "${2}":4 -n 'registrar'
 tmux new-window -t "${2}":5 -n 'verifier'
 tmux new-window -t "${2}":6 -n 'tenant'
-tmux new-window -t "${2}":7 -n 'misc'
-tmux new-window -t "${2}":8 -n 'DOC'
+tmux new-window -t "${2}":7 -n 'DOC'
+tmux new-window -t "${2}":8 -n 'misc'
 tmux attach -t "${2}"
