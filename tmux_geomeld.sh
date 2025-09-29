@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Copyright (c) 2024, Sergio Arroutbi Braojos <sarroutbi (at) redhat.com>
+# Copyright (c) 2025, Sergio Arroutbi Braojos <sarroutbi (at) redhat.com>
 #
 # Permission to use, copy, modify, and/or distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -14,6 +14,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #
+
 cd "${1}" 2>/dev/null || {
 	echo
 	echo "Directory not found"
@@ -29,13 +30,9 @@ test -z "${2}" 2>/dev/null && {
 tmux new -s "${2}" -d
 tmux source-file ~/tmuxes/tmux.common.conf
 tmux rename-window 'console'
-tmux new-window -t "${2}":1 -n 'compile'
+tmux new-window -t "${2}":1 -n 'claude'
 tmux new-window -t "${2}":2 -n 'edit'
-tmux new-window -t "${2}":3 -n 'agent'
-tmux new-window -t "${2}":4 -n 'registrar'
-tmux new-window -t "${2}":5 -n 'verifier'
-tmux new-window -t "${2}":6 -n 'tenant'
-tmux new-window -t "${2}":7 -n 'DOC'
-tmux new-window -t "${2}":8 -n 'tests'
-tmux new-window -t "${2}":9 -n 'tmt'
-tmux attach -t "${2}"
+tmux new-window -t "${2}":3 -n 'test'
+tmux new-window -t "${2}":4 -n 'DOC'
+tmux new-window -t "${2}":5 -n 'misc'
+tmux attach -t "${2}" 
