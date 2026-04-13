@@ -28,8 +28,8 @@ test -z "${2}" 2>/dev/null && {
 }
 tmux new -s "${2}" -d
 tmux source-file ~/tmuxes/tmux.common.conf
-tmux rename-window 'claude1'
-tmux new-window -t "${2}":1 -n 'claude2'
+tmux rename-window 'claude-frontend'
+tmux new-window -t "${2}":1 -n 'claude-backend'
 tmux new-window -t "${2}":2 -n 'compile'
 tmux new-window -t "${2}":3 -n 'edit'
 tmux new-window -t "${2}":4 -n 'frontend'
