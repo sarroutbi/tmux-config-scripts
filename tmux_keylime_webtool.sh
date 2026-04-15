@@ -28,15 +28,14 @@ test -z "${2}" 2>/dev/null && {
 }
 tmux new -s "${2}" -d
 tmux source-file ~/tmuxes/tmux.common.conf
-tmux rename-window 'claude-frontend'
-tmux new-window -t "${2}":1 -n 'claude-backend'
+tmux rename-window 'claude-frontend-org'
+tmux new-window -t "${2}":1 -n 'claude-backend-doc'
 tmux new-window -t "${2}":2 -n 'compile'
 tmux new-window -t "${2}":3 -n 'edit'
 tmux new-window -t "${2}":4 -n 'frontend'
-tmux new-window -t "${2}":4 -n 'backend'
-tmux new-window -t "${2}":5 -n 'verifier-mock'
-tmux new-window -t "${2}":6 -n 'registrar-mock'
-tmux new-window -t "${2}":7 -n 'agent'
-tmux new-window -t "${2}":8 -n 'DOC'
-tmux new-window -t "${2}":9 -n 'misc'
+tmux new-window -t "${2}":5 -n 'backend'
+tmux new-window -t "${2}":6 -n 'verifier-mock'
+tmux new-window -t "${2}":7 -n 'registrar-mock'
+tmux new-window -t "${2}":8 -n 'agent'
+tmux new-window -t "${2}":9 -n 'DOC'
 tmux attach -t "${2}"
