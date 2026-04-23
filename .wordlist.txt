@@ -1,7 +1,17 @@
+ai
+claude
 CLI
 config
 emacs
 Github
 grcov
+ISC
+keylime
 llvm
 Markdown
+md
+POSIX
+pre
+ramalama
+ShellCheck
+tmux
